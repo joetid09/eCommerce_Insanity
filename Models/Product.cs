@@ -65,6 +65,7 @@ namespace eCommerce_Insanity.Models
         public int StockQuantity { get; set; }
 
         [Required]
+        [Column("SKU")]
         public string SKU
         {
             get { return _sku; }
@@ -87,7 +88,7 @@ namespace eCommerce_Insanity.Models
         //suppressing warning that corresponding private fields cannot be null
         //validation/check dont on set
 #pragma warning disable CS8618
-        public Product(string name, decimal price, int categoryId, string sku)
+        public Product(string name, decimal price, int categoryId)
         {
             Name = name;
             Price = price;
