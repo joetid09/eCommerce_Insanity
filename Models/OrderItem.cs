@@ -15,7 +15,6 @@ namespace eCommerce_Insanity.Models
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey("Order")]
         public int OrderId
         {
             get { return _orderId; }
@@ -30,7 +29,6 @@ namespace eCommerce_Insanity.Models
         }
 
         [Required]
-        [ForeignKey("Product")]
         public int ProductId
         {
             get { return _productId; }
@@ -44,7 +42,6 @@ namespace eCommerce_Insanity.Models
             }
         }
 
-        [ForeignKey("Variation")]
         public int? VariationId { get; set; }
 
         [Required]
@@ -75,8 +72,13 @@ namespace eCommerce_Insanity.Models
             }
         }
 
+        [ForeignKey("OrderID")]
         public Order Order { get; set; }
+
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
+
+        [ForeignKey("VariationId")]
         public Variation Variation { get; set; }
 
         public OrderItem(int orderId, int productId, int quantity, decimal priceAtPurchase)

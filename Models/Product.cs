@@ -57,8 +57,6 @@ namespace eCommerce_Insanity.Models
             }
         }
 
-        [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
         public string ImageUrl { get; set; }
 
         [Required]
@@ -76,6 +74,9 @@ namespace eCommerce_Insanity.Models
                 }
             }
         }
+
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
         public ICollection<Variation> Variations { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; }

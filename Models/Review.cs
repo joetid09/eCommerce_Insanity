@@ -15,7 +15,6 @@ namespace eCommerce_Insanity.Models
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey("User")]
         public string UserId
         {
             get { return _userId; }
@@ -30,7 +29,6 @@ namespace eCommerce_Insanity.Models
         }
 
         [Required]
-        [ForeignKey("Product")]
         public int ProductId
         {
             get { return _productId; }
@@ -60,11 +58,14 @@ namespace eCommerce_Insanity.Models
         }
 
         public string? Comment { get; set; }
-        public ICollection<ReviewImage> Images { get; set; } = new List<ReviewImage>(); // For multiple images
 
+        [ForeignKey("UserId")]
         public User User { get; set; }
+
+        [ForeignKey("ProductID")]
         public Product Product { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public ICollection<ReviewImage> Images { get; set; } = new List<ReviewImage>();
 
         // Constructor
         public Review(string userId, int productId, int rating)

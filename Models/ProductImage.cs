@@ -13,7 +13,6 @@ namespace eCommerce_Insanity.Models
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey("Product")]
         public int ProductId
         {
             get { return _productId; }
@@ -41,6 +40,7 @@ namespace eCommerce_Insanity.Models
             }
         }
 
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
 
         public ProductImage(int productId, string imageFileName)

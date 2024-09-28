@@ -12,12 +12,12 @@ namespace eCommerce_Insanity.Models
         private string _city;
         private string _state;
         private string _postalCode;
+        private int _addressTypeId;
 
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey("User")]
         public string UserId
         {
             get { return _userId; }
@@ -28,6 +28,19 @@ namespace eCommerce_Insanity.Models
                     throw new ArgumentException("UserID must be included in Address.");
                 }
                 _userId = value;
+            }
+        }
+
+        [Required]
+        public int AddressTypeId
+        {
+            get { return _addressTypeId; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Address type must be assigned to Address");
+                }
             }
         }
 
@@ -91,9 +104,12 @@ namespace eCommerce_Insanity.Models
             }
         }
 
+        [ForeignKey("UserId")]
         public User User { get; set; }
-        public ICollection<Order> OrdersAsShippingAddress { get; set; } = new List<Order>();
-        public ICollection<Order> OrdersAsBillingAddress { get; set; } = new List<Order>();
+
+        [ForeignKey("AddressTypeId")]
+        public AddressType AddressType { get; set; }
+        public ICollection<OrderAddress> OrderAddresses { get; set; } = new List<OrderAddress>();
 
         // Constructor
         public Address(
@@ -101,7 +117,8 @@ namespace eCommerce_Insanity.Models
             string addressLine1,
             string city,
             string state,
-            string postalCode
+            string postalCode,
+            int addressTypeId
         )
         {
             UserId = userId;
@@ -109,6 +126,7 @@ namespace eCommerce_Insanity.Models
             City = city;
             State = state;
             PostalCode = postalCode;
+            AddressTypeId = addressTypeId;
         }
     }
 }

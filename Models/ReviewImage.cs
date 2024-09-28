@@ -13,7 +13,6 @@ namespace eCommerce_Insanity.Models
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey("Review")]
         public int ReviewId
         {
             get { return _reviewId; }

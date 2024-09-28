@@ -48,7 +48,6 @@ namespace eCommerce_Insanity.Models
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey("Cart")]
         public int CartId
         {
             get { return _cartId; }
@@ -63,7 +62,6 @@ namespace eCommerce_Insanity.Models
         }
 
         [Required]
-        [ForeignKey("Product")]
         public int ProductId
         {
             get { return _productId; }
@@ -91,7 +89,10 @@ namespace eCommerce_Insanity.Models
             }
         }
 
+        [ForeignKey("CartId")]
         public Cart Cart { get; set; }
+
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
 
         [ForeignKey("VariationId")]

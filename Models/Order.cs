@@ -11,8 +11,6 @@ namespace eCommerce_Insanity.Models
     {
         private string _userId;
         private decimal _totalAmount;
-        private int _shippingAddressId;
-        private int _billingAddressId;
 
         [Key]
         public int Id { get; set; }
@@ -49,58 +47,18 @@ namespace eCommerce_Insanity.Models
 
         public string Status { get; set; } = "Pending";
 
-        [Required]
-        public int ShippingAddressId
-        {
-            get { return _shippingAddressId; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Shipping ID must be included on Order");
-                }
-                _shippingAddressId = value;
-            }
-        }
-
-        [Required]
-        public int BillingAddressId
-        {
-            get { return _billingAddressId; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Billing ID must be included on Order");
-                }
-                _billingAddressId = value;
-            }
-        }
-
         // Navigation properties
         [ForeignKey("UserId")]
         public User User { get; set; }
 
-        [ForeignKey("ShippingAddressId")]
-        public Address ShippingAddress { get; set; }
-
-        [ForeignKey("BillingAddressId")]
-        public Address BillingAddress { get; set; }
-
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public ICollection<OrderAddress> OrderAddresses { get; set; } = new List<OrderAddress>();
 
         // Constructor
-        public Order(
-            string userId,
-            decimal totalAmount,
-            int shippingAddressId,
-            int billingAddressId
-        )
+        public Order(string userId, decimal totalAmount)
         {
             UserId = userId;
             TotalAmount = totalAmount;
-            ShippingAddressId = shippingAddressId;
-            BillingAddressId = billingAddressId;
         }
     }
 }
