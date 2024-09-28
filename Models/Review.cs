@@ -67,12 +67,15 @@ namespace eCommerce_Insanity.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public ICollection<ReviewImage> Images { get; set; } = new List<ReviewImage>();
 
-        // Constructor
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public Review(string userId, int productId, int rating)
         {
             UserId = userId;
             ProductId = productId;
             Rating = rating;
         }
+#pragma warning restore CS8618
     }
 }

@@ -42,11 +42,14 @@ namespace eCommerce_Insanity.Models
 
         [ForeignKey("ProductId")]
         public Product Product { get; set; }
-
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public ProductImage(int productId, string imageFileName)
         {
             ProductId = productId;
             ImageFileName = imageFileName;
         }
+#pragma warning restore CS8618
     }
 }

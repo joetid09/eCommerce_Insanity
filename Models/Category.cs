@@ -26,10 +26,13 @@ namespace eCommerce_Insanity.Models
         }
 
         public ICollection<Product> Products { get; set; } = new List<Product>();
-
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public Category(string name)
         {
             Name = name;
         }
+#pragma warning restore CS8618
     }
 }

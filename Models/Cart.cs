@@ -31,11 +31,14 @@ namespace eCommerce_Insanity.Models
 
         public User User { get; set; }
 
-        // Constructor
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public Cart(string userId)
         {
             UserId = userId;
         }
+#pragma warning restore CS8618
     }
 
     public class CartItem
@@ -98,12 +101,15 @@ namespace eCommerce_Insanity.Models
         [ForeignKey("VariationId")]
         public Variation Variation { get; set; }
 
-        // Constructor
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public CartItem(int cartId, int productId, int quantity)
         {
             CartId = cartId;
             ProductId = productId;
             Quantity = quantity;
         }
+#pragma warning restore CS8618
     }
 }

@@ -42,11 +42,14 @@ namespace eCommerce_Insanity.Models
                 _imageFileName = value;
             }
         }
-
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public ReviewImage(int reviewId, string imageFileName)
         {
             ReviewId = reviewId;
             ImageFileName = imageFileName;
         }
+#pragma warning restore CS8618
     }
 }

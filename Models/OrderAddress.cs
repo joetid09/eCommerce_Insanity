@@ -55,7 +55,6 @@ namespace eCommerce_Insanity.Models
             }
         }
 
-        // Navigation Properties
         [ForeignKey("OrderId")]
         public Order Order { get; set; }
 
@@ -65,12 +64,15 @@ namespace eCommerce_Insanity.Models
         [ForeignKey("AddressTypeId")]
         public AddressType AddressType { get; set; }
 
-        // Constructor
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public OrderAddress(int orderId, int addressId, int addressTypeId)
         {
             OrderId = orderId;
             AddressId = addressId;
             AddressTypeId = addressTypeId;
         }
+#pragma warning restore CS8618
     }
 }

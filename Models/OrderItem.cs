@@ -80,7 +80,9 @@ namespace eCommerce_Insanity.Models
 
         [ForeignKey("VariationId")]
         public Variation Variation { get; set; }
-
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public OrderItem(int orderId, int productId, int quantity, decimal priceAtPurchase)
         {
             OrderId = orderId;
@@ -88,5 +90,6 @@ namespace eCommerce_Insanity.Models
             Quantity = quantity;
             PriceAtPurchase = priceAtPurchase;
         }
+#pragma warning restore CS8618
     }
 }

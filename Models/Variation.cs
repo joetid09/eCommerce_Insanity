@@ -78,7 +78,9 @@ namespace eCommerce_Insanity.Models
         [ForeignKey("ProductId")]
         public Product Product { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public Variation(
             int productId,
             string attributeName,
@@ -91,5 +93,6 @@ namespace eCommerce_Insanity.Models
             AttributeValue = attributeValue;
             StockQuantity = stockQuantity;
         }
+#pragma warning restore CS8618
     }
 }

@@ -47,18 +47,20 @@ namespace eCommerce_Insanity.Models
 
         public string Status { get; set; } = "Pending";
 
-        // Navigation properties
         [ForeignKey("UserId")]
         public User User { get; set; }
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
         public ICollection<OrderAddress> OrderAddresses { get; set; } = new List<OrderAddress>();
 
-        // Constructor
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public Order(string userId, decimal totalAmount)
         {
             UserId = userId;
             TotalAmount = totalAmount;
         }
+#pragma warning restore CS8618
     }
 }

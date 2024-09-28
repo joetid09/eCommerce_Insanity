@@ -41,6 +41,7 @@ namespace eCommerce_Insanity.Models
                 {
                     throw new ArgumentException("Product price must be greater than zero.");
                 }
+                _price = value;
             }
         }
 
@@ -54,6 +55,7 @@ namespace eCommerce_Insanity.Models
                 {
                     throw new ArgumentException("Category ID must be a positive integer.");
                 }
+                _categoryId = value;
             }
         }
 
@@ -72,6 +74,7 @@ namespace eCommerce_Insanity.Models
                 {
                     throw new ArgumentException("SKU cannot be empty.");
                 }
+                _sku = value;
             }
         }
 
@@ -81,12 +84,15 @@ namespace eCommerce_Insanity.Models
         public ICollection<Review> Reviews { get; set; }
         public ICollection<OrderItem> OrderItems { get; set; }
         public ICollection<ProductImage> Images { get; set; } = new List<ProductImage>();
-
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public Product(string name, decimal price, int categoryId, string sku)
         {
             Name = name;
             Price = price;
             CategoryId = categoryId;
         }
+#pragma warning restore CS8618
     }
 }

@@ -41,6 +41,7 @@ namespace eCommerce_Insanity.Models
                 {
                     throw new ArgumentException("Address type must be assigned to Address");
                 }
+                _addressTypeId = value;
             }
         }
 
@@ -111,7 +112,9 @@ namespace eCommerce_Insanity.Models
         public AddressType AddressType { get; set; }
         public ICollection<OrderAddress> OrderAddresses { get; set; } = new List<OrderAddress>();
 
-        // Constructor
+        //suppressing warning that corresponding private fields cannot be null
+        //validation/check dont on set
+#pragma warning disable CS8618
         public Address(
             string userId,
             string addressLine1,
@@ -128,5 +131,6 @@ namespace eCommerce_Insanity.Models
             PostalCode = postalCode;
             AddressTypeId = addressTypeId;
         }
+#pragma warning restore CS8618
     }
 }
