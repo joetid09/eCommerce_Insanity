@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "45DTkCSpwWE=",
+  "dgSpecHash": "hDeRoDfKD4Q=",
   "success": true,
   "projectFilePath": "/home/adminjoe/Documents/Projects/eCommerce_Insanity/eCommerce_Insanity.csproj",
   "expectedPackageFiles": [
-    "/home/adminjoe/.nuget/packages/automapper/1.1.0.118/automapper.1.1.0.118.nupkg.sha512",
+    "/home/adminjoe/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/home/adminjoe/.nuget/packages/fluentvalidation/8.2.2/fluentvalidation.8.2.2.nupkg.sha512",
     "/home/adminjoe/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/adminjoe/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.8/microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
@@ -82,16 +82,5 @@
     "/home/adminjoe/.nuget/packages/system.text.json/8.0.4/system.text.json.8.0.4.nupkg.sha512",
     "/home/adminjoe/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'AutoMapper 1.1.0.118' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

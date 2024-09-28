@@ -45,7 +45,7 @@
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
-              "version": "[1.1.0.118, )"
+              "version": "[13.0.1, )"
             },
             "FluentValidation": {
               "target": "Package",
