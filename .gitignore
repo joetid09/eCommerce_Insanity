@@ -482,5 +482,7 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-obj/project.nuget.cache
-obj/Debug/net8.0/eCommerce_Insanity.assets.cache
+obj/
+bin\
+project.nuget.cache
+**/AssemblyInfo.cs

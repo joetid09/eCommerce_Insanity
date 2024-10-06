@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace eCommerce_Insanity.Models
 {
@@ -81,9 +82,13 @@ namespace eCommerce_Insanity.Models
 
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
+
         public ICollection<Variation> Variations { get; set; }
+
         public ICollection<Review> Reviews { get; set; }
+
         public ICollection<OrderItem> OrderItems { get; set; }
+
         public ICollection<ProductImage> Images { get; set; } = new List<ProductImage>();
         //suppressing warning that corresponding private fields cannot be null
         //validation/check dont on set

@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.1, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[8.2.2, )"

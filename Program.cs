@@ -1,3 +1,4 @@
+using System;
 using eCommerce_Insanity.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -13,6 +14,7 @@ builder.Configuration.AddUserSecrets<Program>();
 builder.Services.AddControllers(); // For handling API controllers
 builder.Services.AddEndpointsApiExplorer(); // For API exploration and testing
 builder.Services.AddSwaggerGen(); // For generating Swagger documentation
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<ECommerceDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
