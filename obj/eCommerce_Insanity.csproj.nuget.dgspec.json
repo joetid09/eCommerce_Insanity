@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/adminjoe/Documents/Projects/eCommerce_Insanity/eCommerce_Insanity.csproj": {}
+    "/home/joe_coder/Projects/eCommerce_insanity_repos/eCommerce_Insanity/eCommerce_Insanity.csproj": {}
   },
   "projects": {
-    "/home/adminjoe/Documents/Projects/eCommerce_Insanity/eCommerce_Insanity.csproj": {
+    "/home/joe_coder/Projects/eCommerce_insanity_repos/eCommerce_Insanity/eCommerce_Insanity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/adminjoe/Documents/Projects/eCommerce_Insanity/eCommerce_Insanity.csproj",
+        "projectUniqueName": "/home/joe_coder/Projects/eCommerce_insanity_repos/eCommerce_Insanity/eCommerce_Insanity.csproj",
         "projectName": "eCommerce_Insanity",
-        "projectPath": "/home/adminjoe/Documents/Projects/eCommerce_Insanity/eCommerce_Insanity.csproj",
-        "packagesPath": "/home/adminjoe/.nuget/packages/",
-        "outputPath": "/home/adminjoe/Documents/Projects/eCommerce_Insanity/obj/",
+        "projectPath": "/home/joe_coder/Projects/eCommerce_insanity_repos/eCommerce_Insanity/eCommerce_Insanity.csproj",
+        "packagesPath": "/home/joe_coder/.nuget/packages/",
+        "outputPath": "/home/joe_coder/Projects/eCommerce_insanity_repos/eCommerce_Insanity/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/adminjoe/.nuget/NuGet/NuGet.Config"
+          "/home/joe_coder/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
