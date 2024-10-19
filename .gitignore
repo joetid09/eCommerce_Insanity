@@ -489,3 +489,8 @@ project.nuget.cache
 obj/project.nuget.cache
 obj/Debug/net8.0/eCommerce_Insanity.AssemblyInfo.cs
 obj/Debug/net8.0/eCommerce_Insanity.AssemblyInfoInputs.cache
+obj/Debug/net8.0/eCommerce_Insanity.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net8.0/eCommerce_Insanity.csproj.AssemblyReference.cache
+obj/Debug/net8.0/eCommerce_Insanity.assets.cache
+obj/Debug/net8.0/eCommerce_Insanity.csproj.AssemblyReference.cache
+obj/Debug/net8.0/eCommerce_Insanity.AssemblyInfo.cs
