@@ -1,0 +1,6 @@
+@eCommerce_Insanity_HostAddress = http://localhost:5226
+
+GET {{eCommerce_Insanity_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
