@@ -9,10 +9,10 @@ namespace eCommerce_Insanity.Models
 {
     public class Product
     {
-        private string _name;
-        private decimal _price;
-        private int _categoryId;
-        private string _sku;
+        private string _name = "";
+        private decimal _price = 0;
+        private int _categoryId = 0;
+        private string _sku = "";
 
         [Key]
         public int Id { get; set; }
@@ -30,7 +30,7 @@ namespace eCommerce_Insanity.Models
                 _name = value;
             }
         }
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Required]
         public decimal Price
@@ -60,7 +60,7 @@ namespace eCommerce_Insanity.Models
             }
         }
 
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         [Required]
         public int StockQuantity { get; set; }
@@ -81,15 +81,18 @@ namespace eCommerce_Insanity.Models
         }
 
         [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
 
-        public ICollection<Variation> Variations { get; set; }
+        public ICollection<Variation>? Variations { get; set; }
 
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
 
-        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<OrderItem>? OrderItems { get; set; }
 
         public ICollection<ProductImage> Images { get; set; } = new List<ProductImage>();
+
+        public Product() { }
+
         //suppressing warning that corresponding private fields cannot be null
         //validation/check dont on set
 #pragma warning disable CS8618
