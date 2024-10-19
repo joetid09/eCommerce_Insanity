@@ -486,3 +486,6 @@ obj/
 bin\
 project.nuget.cache
 **/AssemblyInfo.cs
+obj/project.nuget.cache
+obj/Debug/net8.0/eCommerce_Insanity.AssemblyInfo.cs
+obj/Debug/net8.0/eCommerce_Insanity.AssemblyInfoInputs.cache
