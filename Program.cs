@@ -15,6 +15,10 @@ builder.Services.AddControllers(); // For handling API controllers
 builder.Services.AddEndpointsApiExplorer(); // For API exploration and testing
 builder.Services.AddSwaggerGen(); // For generating Swagger documentation
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddIdentity<IdentityUser,
+    IdentityRole>()
+    .AddEntityFrameworkStores<ECommerceDbContext>()
+    .AddDefaultTokenProviders();
 builder.Services.AddDbContext<ECommerceDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );

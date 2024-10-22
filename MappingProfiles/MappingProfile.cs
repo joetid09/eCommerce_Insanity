@@ -8,7 +8,9 @@ namespace eCommerce_Insanity.MappingProfiles
     {
         public MappingProfile()
         {
-            CreateMap<ProductDTO, Product>();
+            CreateMap<CreateProductDTO, Product>();
+            CreateMap<UpdateProductDTO, Product>()
+                .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
         }
     }
 }

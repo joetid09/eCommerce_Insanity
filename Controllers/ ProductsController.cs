@@ -41,9 +41,11 @@ namespace eCommerce_Insanity.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Product>> CreateProduct([FromBody] ProductDTO productDTO)
+        public async Task<ActionResult<Product>> CreateProduct(
+            [FromBody] CreateProductDTO CreateProductDTO
+        )
         {
-            var product = _mapper.Map<Product>(productDTO);
+            var product = _mapper.Map<Product>(CreateProductDTO);
             _dbContext.Products.Add(product);
             await _dbContext.SaveChangesAsync();
 
@@ -51,7 +53,7 @@ namespace eCommerce_Insanity.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, ProductDTO productDTO)
+        public async Task<IActionResult> UpdateProduct(int id, UpdateProductDTO UpdateProductDTO)
         {
             var product = await _dbContext.Products.FindAsync(id);
 
@@ -60,7 +62,7 @@ namespace eCommerce_Insanity.Controllers
                 return NotFound();
             }
 
-            _mapper.Map(productDTO, product);
+            _mapper.Map(UpdateProductDTO, product, typeof(UpdateProductDTO), typeof(Product));
 
             try
             {
