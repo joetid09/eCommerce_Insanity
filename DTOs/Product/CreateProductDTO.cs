@@ -1,13 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using eCommerce_Insanity.Models;
 
 namespace eCommerce_Insanity.DTOs
 {
-    public class ProductDTO
+    public class CreateProductDTO
     {
         private string _name = "";
         private decimal _price = 0;
